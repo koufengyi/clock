@@ -1,0 +1,306 @@
+<doctype html>
+<html manifest="colorclock.appcache">
+    <head>
+        <title>Color Clock</title>
+        <meta http-equiv="Content-type" content="text/html; charset=utf-8">
+        <meta name="apple-mobile-web-app-capable" content="yes">
+        <meta name="apple-mobile-web-app-status-bar-style" content="black">
+        
+        <meta name="apple-mobile-web-app-title" content="Color Clock">
+        
+        
+        <!-- iPad, iOS 7+ -->
+        <link href="apple-touch-icon-76x76.png" sizes="76x76" 
+            rel="apple-touch-icon-precomposed">
+        <!-- iPad, iOS 7+, retina -->
+        <link href="apple-touch-icon-152x152.png" sizes="152x152" 
+            rel="apple-touch-icon-precomposed">
+        <!-- iPad, iOS 6 -->
+        <link href="apple-touch-icon-72x72.png" sizes="72x72" 
+            rel="apple-touch-icon-precomposed">
+        <!-- iPad, iOS 6, retina -->
+        <link href="apple-touch-icon-144x144.png" sizes="144x144" 
+            rel="apple-touch-icon-precomposed">
+        <!-- iPhone 6 Plus icon -->
+        <link href="apple-touch-icon-precomposed-180.png" sizes="120x120"
+            rel="apple-touch-icon-precomposed">
+        <!-- iPhone, iOS 6 -->
+        <link href="apple-touch-icon-57x57.png" sizes="57x57" 
+            rel="apple-touch-icon-precomposed">
+        <!-- iPhone ,iOS 6, retina -->
+        <link href="apple-touch-icon-114x114.png" sizes="114x114" 
+            rel="apple-touch-icon-precomposed">
+        <!-- iPhone, iOS 7+ -->
+        <link href="apple-touch-icon-60x60.png" sizes="60x60" 
+            rel="apple-touch-icon-precomposed">
+        <!-- iPhone, iOS 7+, retina -->
+        <link href="apple-touch-icon-120x120.png" sizes="120x120" 
+            rel="apple-touch-icon-precomposed">
+        
+        
+        <!-- Static Startup Screens-->
+        <!-- iPad, retina, portrait -->
+        <link href="apple-touch-startup-image-1536x2008.png"
+              media="(device-width: 768px) and (device-height: 1024px)
+                 and (orientation: portrait)
+                 and (-webkit-device-pixel-ratio: 2)"
+              rel="apple-touch-startup-image">
+        <!-- iPad, retina, landscape -->
+        <link href="apple-touch-startup-image-1496x2048.png"
+              media="(device-width: 768px) and (device-height: 1024px)
+                 and (orientation: landscape)
+                 and (-webkit-device-pixel-ratio: 2)"
+              rel="apple-touch-startup-image">
+        <!-- iPad, portrait -->
+        <link href="apple-touch-startup-image-768x1004.png"
+              media="(device-width: 768px) and (device-height: 1024px)
+                 and (orientation: portrait)
+                 and (-webkit-device-pixel-ratio: 1)"
+              rel="apple-touch-startup-image">
+        <!-- iPad, landscape -->
+        <link href="apple-touch-startup-image-748x1024.png"
+              media="(device-width: 768px) and (device-height: 1024px)
+                 and (orientation: landscape)
+                 and (-webkit-device-pixel-ratio: 1)"
+              rel="apple-touch-startup-image">
+        <!-- iPhone 6 Plus portrait startup image -->
+        <link href="apple-touch-startup-image-1242x2148.png"
+              media="(device-width: 414px) and (device-height: 736px)
+                     and (-webkit-device-pixel-ratio: 3)
+                     and (orientation: portrait)"
+              rel="apple-touch-startup-image">
+        <!-- iPhone 6 Plus landscape startup image -->
+        <link href="apple-touch-startup-image-1182x2208.png"
+              media="(device-width: 414px) and (device-height: 736px)
+                     and (-webkit-device-pixel-ratio: 3)
+                     and (orientation: landscape)"
+              rel="apple-touch-startup-image">
+        <!-- iPhone 6 startup image -->
+        <link href="apple-touch-startup-image-750x1294.png"
+              media="(device-width: 375px) and (device-height: 667px)
+                     and (-webkit-device-pixel-ratio: 2)"
+              rel="apple-touch-startup-image">
+        <!-- iPhone, retina -->
+        <link href="apple-touch-startup-image-640x920.png"
+              media="(device-width: 320px) and (device-height: 480px)
+                 and (-webkit-device-pixel-ratio: 2)"
+              rel="apple-touch-startup-image">
+        <!-- iPhone -->
+        <link href="apple-touch-startup-image-320x460.png"
+              media="(device-width: 320px) and (device-height: 480px)
+                 and (-webkit-device-pixel-ratio: 1)"
+              rel="apple-touch-startup-image">
+        <!-- iPhone 5 -->
+        <link href="apple-touch-startup-image-640x1096.png"
+              media="(device-width: 320px) and (device-height: 568px)
+                 and (-webkit-device-pixel-ratio: 2)"
+              rel="apple-touch-startup-image">
+<!-- <html>
+	<head>
+		<title></title> -->
+
+	
+		<style>
+			html,body {
+                        height: 100%;
+                        margin: 0;
+                        padding:0;
+
+			}
+
+			body {
+				background-color: #555555;
+
+			}
+
+            #clock{
+            	position:absolute;
+            	top:50%;
+            	left:50%;
+            	transform: translate(-50%,-50%);
+            	-webkit-transform: translate(-50%,-50%);
+            	-moz-transform:    translate(-50%,-50%);
+            	-o-transform:      translate(-50%,-50%);
+            	-ms-transform:     translate(-50%,-50%);
+            	color: #FFFFFF
+            	/*display:none;*/
+            }
+
+            .visibleText{
+            	font-family: 'HelveticaNeue-UltraLight', sans-serif;
+            	font-size: 15vw;
+            	text-align:center;
+            	opacity: 0.8;
+
+            }
+
+            #selectors  {
+            	text-align: center;
+
+            }
+
+            #selectors a {
+
+            	display: inline-block;
+            	background-color: #FFFFFF;
+            	width:49%;
+            	height: 30px;
+            	opacity: 0.5;
+
+            }
+
+            #selectors a.active {
+            	opacity: 0.7;
+
+            }
+
+            #selectors a:hover{
+            	opacity: 0.8;
+            }
+
+            .noSelect {
+            	user-select:           none;
+            	-webkit-user-select:   none;
+            	-khtml-user-select:    none;
+            	-moz-user-select:      none;
+            	-o-user-select:        none;
+            	-ms-user-select:       none;
+
+            	-webkit-tap-highlight-color:0;
+
+            	-webkit-touch-callout: none;
+
+            }
+
+		</style>
+
+		<!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script> -->
+		<script src="js/jquery.min.js" type="text/javascript" charset="utf-8"></script>
+		<script src="js/jquery.color.js" type="text/javascript" charset="utf-8"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+		<script>
+
+			$(document).ready(function(){
+
+
+
+				function clockUpdate(){
+
+					var date = new Date();
+					var hours = date.getHours();
+					var minutes = date.getMinutes();
+					var seconds = date.getSeconds();
+
+					var timeString = padZero(hours) + ":" + padZero(minutes) + ":" + padZero(seconds) ;
+					console.log(timeString);
+					$("#time").html(timeString);
+
+					var color = "#" + timeToHex(hours,minutes,seconds);
+
+					$("#hex").html(color);
+
+					// $('body').css( {'background-color': color} );
+
+					$('body').animate({'background-color':color }, 800, function(){
+
+					blackOrWhiteTextColorBasedOnBackground();
+				});
+
+
+					
+
+
+				};
+				
+				clockUpdate();
+				setInterval(clockUpdate,1000);
+
+
+                function timeToHex(hours, minutes, seconds) {
+
+                    return padZero(parseInt((hours / 24) * 255, 10).toString(16)) +
+                           padZero(parseInt((minutes / 60) * 255, 10).toString(16)) +
+                           padZero(parseInt((seconds / 60) * 255, 10).toString(16));
+                }
+
+				function padZero(val) {
+					var value = val.toString();
+					return (value.length < 2) ? "0" + value : value;
+				}
+
+
+				$('#selectors a').click(function(){
+					$($(this).attr('href')).show().siblings().hide();
+
+					$(this).addClass('active').siblings().removeClass('active');
+
+					
+					
+				
+			});
+
+
+
+
+				                //change color of text based on background color
+                function blackOrWhiteTextColorBasedOnBackground() {
+                    //get color in rgb format, as well as locations of first and last char of the string
+                    //e.g. "rgb(255, 255, 255)", 4, and 17
+                    var color = $('body').css('background-color');
+                    var startIndex = color.indexOf('(') + 1;
+                    var lastIndex = color.indexOf(')');
+                    
+                    //pull string of numbers only from color (using start and end parens as indeces)
+                    //  and create array of values by splitting around comma delimiter
+                    var values = color.slice(startIndex,lastIndex).split(',');
+                    
+                    //using the brightness index, determine color contrast value
+                    var o = Math.round( ( (parseInt(values[0]) * 299) + 
+                                          (parseInt(values[1]) * 587) + 
+                                          (parseInt(values[2]) * 114) ) / 1000);
+                    //if brighter than the middle composite color value (255/2), make text black. else make white
+                    (o > 127) ? $('#hex, #time').css('color', 'black') : $('#hex, #time').css('color', 'white');
+                    //(o > 127) ? $('#time').css('color', 'black') : $('#time').css('color', 'white');
+                }
+
+
+			} )
+
+
+		</script>
+
+	
+	</head>
+	<body>
+		<div id="clock">
+
+			<div id="textDisplay">
+				<div id="time" class="visibleText noSelect">
+					00:00:00
+				</div>
+				<div id="hex" class="visibleText noSelect" style="display: none;">
+					#111111
+				</div>
+			</div>
+
+			<div id="selectors">
+				<a href=#time " class="active"></a> <a href="#hex"></a>
+			</div>
+			
+		</div>
+
+		
+      </body>
+</html>

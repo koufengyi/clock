@@ -1,0 +1,3 @@
+Serving a cache manifest requires that your server be setup to know what a manifest is. This is easily accomplished when using an Apache server by using an htaccess file. 
+
+This folder already has an htaccess file in it, so you can copy the entire folder to a server. However, as system files are typically invisible, I've duplicated the file as a text file. If you prefer, simply upload the text file and then rename it, on the server, from "htaccess.txt" to ".htaccess"
